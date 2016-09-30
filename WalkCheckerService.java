@@ -25,6 +25,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Vibrator;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
@@ -148,7 +149,6 @@ public class WalkCheckerService extends Service implements SensorEventListener, 
         isFirst = true;
         // regi br
         registerBroadcastReceivers();
-
         //Toast.makeText(this, "WalkCheckerService onCreated", Toast.LENGTH_SHORT).show();
     }
 
@@ -507,7 +507,7 @@ public class WalkCheckerService extends Service implements SensorEventListener, 
         // keep it alive when low memory
         NotificationManager nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         Notification notification = null;
-        notification = new Notification.Builder(getApplicationContext())
+        notification = new NotificationCompat.Builder(getApplicationContext())
                 .setContentTitle("")
                 .setContentText("")
                 .setSmallIcon(R.drawable.foot)

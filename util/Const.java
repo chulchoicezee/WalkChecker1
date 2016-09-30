@@ -23,4 +23,5 @@ public class Const {
     public static final int PARAM_ACT_UPDATE_LOCATION = 2;
     public static final int PARAM_ACT_CHECK_PERMISSION = 3;
     public static final int PARAM_ACT_REMOVE_MINI_VIEW = 4;
+
 }

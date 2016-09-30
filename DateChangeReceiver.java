@@ -17,7 +17,6 @@ import java.util.Date;
 public class DateChangeReceiver extends BroadcastReceiver {
 
     private static final String TAG = "DateChangeReceiver";
-    static int temp;
     private Context context;
 
     public DateChangeReceiver(Context $context) {

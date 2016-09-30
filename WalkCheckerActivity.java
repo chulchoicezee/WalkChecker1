@@ -216,7 +216,7 @@ public class WalkCheckerActivity extends Activity implements View.OnClickListene
                     canGPS = true;
                     Toast.makeText(WalkCheckerActivity.this, "GPS available", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(WalkCheckerActivity.this, "Please turn on GPS next time", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(WalkCheckerActivity.this, "Please turn on GPS next time.", Toast.LENGTH_SHORT).show();
                     finish();
                 }
                 break;
