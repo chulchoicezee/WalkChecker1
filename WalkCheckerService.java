@@ -19,11 +19,13 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Vibrator;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -502,7 +504,6 @@ public class WalkCheckerService extends Service implements SensorEventListener, 
                 , WindowManager.LayoutParams.TYPE_PHONE, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
                 , PixelFormat.TRANSPARENT);
         wm.addView(mView, mParams);
-
         // keep it alive when low memory
         NotificationManager nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         Notification notification = null;
@@ -511,8 +512,9 @@ public class WalkCheckerService extends Service implements SensorEventListener, 
                 .setContentText("")
                 .setSmallIcon(R.drawable.foot)
                 .build();
+        nm.notify(1, notification);
+        nm.cancel(1);
         startForeground(0, notification);
-
     }
 
     private void startListeningAccelerometer() {
